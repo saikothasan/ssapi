@@ -5,7 +5,9 @@
       "src": "index.js",
       "use": "@vercel/node",
       "config": {
-        "maxLambdaSize": "50mb"
+        "maxLambdaSize": "50mb",
+        "memory": 1024,
+        "maxDuration": 30
       }
     }
   ],
@@ -17,10 +19,13 @@
   ],
   "functions": {
     "index.js": {
-      "maxDuration": 30
+      "maxDuration": 30,
+      "memory": 1024
     }
   },
   "env": {
     "NODE_ENV": "production"
-  }
+  },
+  "regions": ["iad1"],
+  "framework": null
 }
